@@ -1,5 +1,5 @@
 $slots: 22;
-$height: 60vw;
+$height: 1200px;
 .wrapper {
   background-color: #fff;
   overflow: hidden;
@@ -10,18 +10,24 @@ $height: 60vw;
   align-items: center;
   justify-content: center;
 
-  div {
+  .positioner {
     position: absolute;
-    width: 240px;
-    height: $height;
-    transform-origin: bottom center;
-    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
-    background: #eee;
-    z-index: 1;
-    top: calc($height/-2);
-    @for $i from 1 through $slots {
-      &:nth-child(#{$i}) {
-        transform: rotate(calc((360deg / #{$slots}) * #{$i}));
+    height: 100%;
+    top: calc($height / -2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+      position: absolute;
+      width: 338px;
+      height: $height;
+      transform-origin: bottom center;
+      clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+      background: #eee;
+      @for $i from 1 through $slots {
+        &:nth-child(#{$i}) {
+          transform: rotate(calc((360deg / #{$slots}) * #{$i}));
+        }
       }
     }
   }

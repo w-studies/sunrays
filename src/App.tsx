@@ -3,19 +3,20 @@ import "./App.scss";
 const SunRay = () => (
   <>
     <div>
-      <img src="https://via.placeholder.com/250x900.jpg" alt="" />
+      <img src="https://via.placeholder.com/340x1200.jpg" alt="" />
     </div>
     <div></div>
   </>
 );
 
 function App() {
-
   return (
     <div className="wrapper">
-      {[...Array(22).keys()].map((n) => (
-        <SunRay key={n} />
-      ))}
+      <div className="positioner">
+        {[...Array(22).keys()].map((n) => (
+          <SunRay key={n} />
+        ))}
+      </div>
     </div>
   );
 }
